@@ -1,0 +1,19 @@
+{
+  "version": "1.0.0",
+  "author": "dxl",
+  "config": {
+    "href": "http://itemsys.admin.ct108.org:1506",
+    "host": "itemsys.admin.ct108.org",
+    "port": 1506,
+    "debug": false
+  },
+  "dataList": [
+  	{
+      "tip":"接口描述",
+      "url": "/role/getroledata",
+      "type": "get",
+	  "data":""
+	}
+
+  ]
+}
