@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>\{{ msg }}</h1>
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
       // with hot-reload because the reloaded component
       // preserves its current state and we are modifying
       // its initial state.
-      msg: 'Hello Vue!'
+      msg: 'Hello Vue!Hello world!'
     }
   }
 }
