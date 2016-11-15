@@ -1,15 +1,17 @@
-var path = require('path')
-var webpack = require('webpack')
-
+var path = require('path');
+var webpack = require('webpack');
 module.exports = {
-  entry: './src/main.js',
+  context: path.resolve("static/script/app"),
+  entry: {
+    main:'./main.js'
+  },
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: '[name].bundle.js'
   },
-  resolveLoader: {
-    root: path.join(__dirname, 'node_modules'),
+  resolve: {
+    root: [path.resolve('node_modules'),path.resolve('static/script/component')]
   },
   module: {
     loaders: [
