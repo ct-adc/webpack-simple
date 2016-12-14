@@ -1,13 +1,14 @@
 var path = require('path');
 var webpack = require('webpack');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 module.exports = {
   context: path.resolve("static/script/app"),
   entry: {
     main:'./main.js'
   },
   output: {
-    path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    path: path.resolve(__dirname, './asset'),
+    publicPath: '/asset/',
     filename: '[name].bundle.js'
   },
   resolve: {
@@ -23,6 +24,10 @@ module.exports = {
         test: /\.js$/,
         loader: 'babel',
         exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        loader: 'css-loader'
       },
       {
         test: /\.json$/,
@@ -44,13 +49,17 @@ module.exports = {
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    port:8000,
+    proxy:{
+      '**': 'http://localhost:3000'
+    }
   },
   devtool: '#eval'
 };
 
 if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map';
+  //module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -65,4 +74,8 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.optimize.OccurenceOrderPlugin()
   ])
+}else{
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new OpenBrowserPlugin({ url: 'http://localhost:8000' })
+  ]);
 }

@@ -1,7 +1,7 @@
 var http = require('http');        // Http服务器API
 var fs = require('fs');            // 用于处理本地文件
 var server = new http.Server();    // 创建新的HTTP服务器
-server.listen(8000);            // 监听端口8000
+server.listen(3000);            // 监听端口3000
 var httpOpt;
 fs.readFile('./serverPackage.json',function(err,data){
 	if(err) { 
