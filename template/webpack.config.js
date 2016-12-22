@@ -2,7 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/js/app/index.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './asset'),
     publicPath: '/asset/',
@@ -45,11 +45,16 @@ module.exports = {
     ]
   },
   resolve: {
-    modules:['./src/js/component']
+    alias: {
+      'vue$': 'vue/dist/vue.common.js'
+    }
   },
   devServer: {
     historyApiFallback: true,
-    noInfo: true
+    noInfo: true,
+    proxy:{
+      '**': 'http://localhost:3000'
+    }
   },
   performance: {
     hints: false
