@@ -2,11 +2,14 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  context: path.resolve(__dirname, "./src/js/app"),
+  entry: {
+    index:'./index.js'
+  },
   output: {
     path: path.resolve(__dirname, './asset'),
     publicPath: '/asset/',
-    filename: 'index.js'
+    filename: '[name].bundle.js'
   },
   module: {
     rules: [
@@ -45,6 +48,7 @@ module.exports = {
     ]
   },
   resolve: {
+    modules:['./src/js/component','./node_modules'],
     alias: {
       'vue$': 'vue/dist/vue.common.js'
     }
