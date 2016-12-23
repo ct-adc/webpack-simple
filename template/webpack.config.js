@@ -48,7 +48,8 @@ module.exports = {
     ]
   },
   resolve: {
-    modules:['./src/js/component','./node_modules'],
+    modules:[path.resolve(__dirname, 'src/js/component'),'node_modules'],
+    extensions: ['.js', '.json','.vue','.css','.scss'],
     alias: {
       'vue$': 'vue/dist/vue.common.js'
     }
