@@ -48,7 +48,7 @@ module.exports = {
     ]
   },
   resolve: {
-    modules:[path.resolve(__dirname, 'src/js/component'),'node_modules'],
+    modules:[path.resolve(__dirname, 'src/js/component'),path.resolve(__dirname, 'src/js/module'),'node_modules'],
     extensions: ['.js', '.json','.vue','.css','.scss'],
     alias: {
       'vue$': 'vue/dist/vue.common.js'
@@ -62,7 +62,7 @@ module.exports = {
     }
   },
   performance: {
-    hints: false
+    hints: true
   },
   devtool: '#eval-source-map'
 };
