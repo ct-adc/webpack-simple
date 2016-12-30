@@ -2,6 +2,6 @@
   "presets": [
     ["es2015", { "modules": false }],
   ],
-  "plugins": ["transform-runtime"],
+  "plugins": ["transform-runtime", ["component", [{ "libraryName": "adc", "style": false, "libDir":"component"}]]],
   "comments": false
 }
