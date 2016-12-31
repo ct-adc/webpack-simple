@@ -62,7 +62,7 @@ module.exports = {
     }
   },
   performance: {
-    hints: true
+    hints: false
   },
   devtool: '#eval-source-map'
 };
