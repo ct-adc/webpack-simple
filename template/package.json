@@ -10,8 +10,8 @@
   },
   "dependencies": {
     "vue": "^2.1.0",
-    "ct-adc":"^0.0.1",
-    "ct-utility":"^0.0.2"
+    "ct-adc":"~0.0.1",
+    "ct-utility":"~0.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
