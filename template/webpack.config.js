@@ -55,6 +55,8 @@ module.exports = {
     }
   },
   devServer: {
+    //port
+    //host
     historyApiFallback: true,
     noInfo: true,
     proxy:{
