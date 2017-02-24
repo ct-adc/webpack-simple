@@ -1,33 +1,52 @@
-# webpack-simple
+## 使用前提
 
-> A simple Vue 2.0 Webpack & `vue-loader` setup for quick prototyping. Note this template is not suitable for production - for that you may want to wait for an official 2.0 webpack template.
+本机已安装vue-cli
 
-> This template is Vue 2.0 compatible. For Vue 1.x use this command: `vue init webpack-simple#1.0 my-project`
+## 使用
 
-### Usage
+step1: 初始化项目
 
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
-
-``` bash
-$ npm install -g vue-cli
-$ vue init webpack-simple my-project
-$ cd my-project
-$ npm install
-$ npm run dev
+```
+vue init ct-adc/webpack-simple yourProjectName
 ```
 
-### What's Included
+step2: 安装依赖
 
-- `npm run dev`: Webpack + `vue-loader` with proper config for source maps & hot-reload.
-
-- `npm run build`: build with HTML/CSS/JS minification.
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader). Also check out the [breaking changes in vue-loader@9.0.0](https://github.com/vuejs/vue-loader/releases/tag/v9.0.0).
-
-### Fork It And Make Your Own
-
-You can fork this repo to create your own boilerplate, and use it with `vue-cli`:
-
-``` bash
-vue init username/repo my-project
 ```
+npm install
+```
+安装依赖会根据package.json中定义的依赖及版本进行安装；
+如果你不需要使用package.json中定义的某些依赖，可以在安装前将其从package.json中去除；
+
+step3: 现在可以进行项目开发了!
+
+## Q & A
+
+1. 不想使用jshint检查某些第三方代码怎么办？
+
+在moudle.rules中将jshint-loader项的exclude中加入第三方代码的路径，webpack支持你使用正则进行设置；
+
+2. jshint检查规则怎么设置？
+
+项目根目录下有.jshintrc文件，webpack中用于检查代码的jshint-loader检查规则就是以此为依据的。
+如果不想让其检查某些项，就置其为false；
+
+常见的jshint配置有:
+strict: 是否按es5严格模式执行代码检查;
+globals: 全局变量检查，如$/alert/console等；
+例如你引入了一个第三方插件，这个插件向外释放了一个变量A，那么你可以在globals中设置A:false；这样jshint就不会提示你:'A is not defined!'的错误;
+
+3. 生成后的文件在哪里？
+
+默认生成的文件都在项目根目录下的asset文件夹中，如果你的项目中同时用了js/css/图片/字体，那么将生成:
+* asset/js: 存放js；
+* asset/css: 存放css；
+* asset/font: 存放字体;
+* asset/img: 存放图片；
+
+4.
+
+
+
+
+
