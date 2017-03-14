@@ -24,6 +24,8 @@
   "globals": {
     "$": false,
     "Vue":false,
-    "MiniMsg":false
+    "MiniMsg":false,
+    "window":false,
+    "alert":false
   }
 }
