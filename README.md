@@ -1,3 +1,9 @@
+## 提示
+
+请使用[webpack](https://github.com/ct-adc/webpack)做项目脚手架，本项目不再维护
+
+--2017-12-12
+
 ## 使用前提
 
 本机已安装vue-cli
